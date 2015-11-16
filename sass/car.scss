@@ -1,0 +1,366 @@
+.content_car{
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 300px;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.89);
+    z-index: 9;
+    @include transition(transform .15s ease-in);
+    @include transform(translatex(100%));
+    
+    &.open{
+        @include transform(translatex(0%));
+    }
+    
+    .container_btn_car{
+        margin: .5rem 0;
+        padding: .15rem .5rem;
+        border: solid #444 thin;
+        
+        button{
+            background: #444;
+            color: white;
+            border-color: #444;
+            width: 100%;
+            padding: .3rem 1rem;
+            
+            &:hover{
+                color: #444;
+                background: transparent;
+            }
+        }
+    }
+    
+    .form_buy{
+        padding: .5rem 1.8rem;
+        margin: .5rem 0;
+        border: solid #444 thin;
+        display: none;
+        
+        input{
+            margin: 0;
+            
+            &[type=text],
+            &[type=email],
+            &[type=number]{
+                height: 2rem;
+            }
+        }
+        
+        .input-field{
+            label{
+                top: 0.2rem;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                
+                &.active{
+                    @include transform(translateY(-74%));
+                }
+            }
+        }
+        
+        .container_btn_car{
+            border: none;
+            padding: 0;
+        }
+    }
+}
+
+// estilos a los tabs de materialize
+.tabs {
+    counter-reset: tabs-numbers;
+    background: transparent;
+    
+    &:not(.product_){
+        .tab{
+            a{
+                background: transparent !important;
+            }
+        }
+    }
+    
+    .tab {
+        @include flex-item(none);
+        display: inline-block;
+        vertical-align: top;
+        float: none;
+        
+        &:nth-child(2),
+        &:nth-child(3){
+            a{
+                border-color: #323232 transparent  #323232 transparent;
+            }
+        }
+        
+        &:nth-child(2){
+            a{
+                border-right-color: #323232;
+            }
+        }
+        
+        a{
+            color: #323232;
+            font-size: .83rem;
+            border: solid thin #323232;
+            
+            &:before{
+                content: counter(tabs-numbers) '. ';
+                counter-increment: tabs-numbers;
+            }
+            
+            &.active{
+                border-bottom-color: transparent;
+                
+                &:hover{
+                    color: #323232;
+                    background: transparent;
+                }
+            }
+            
+            &:hover{
+                color: white;
+                background: $blue_main;
+            }
+        }
+    }
+    .indicator{
+        background: $blue_main;
+        display: none;
+    }
+}
+
+// estilos ara el contenedor de los tabs
+.content_tabs{
+    padding: 1.5rem 0;
+    border: #323232 solid thin;
+    border-top-color: transparent;
+    margin: 0;
+    
+    &.product{
+        border-color: transparent;
+        text-align: center;
+        
+        .tabs,
+        .content_tips{
+            width: calc(100% / 2 - 50px) !important;
+            display: inline-block;
+            vertical-align: top;
+            height: auto;
+        }
+        
+        .tabs{
+            width: 300px !important;
+            display: inline-block;
+            max-width: 100%;
+            margin-right: .2rem;
+            
+            .tab{
+                display: block;
+                
+                &:nth-child(1){
+                    a{
+                        background-color: $red_main;
+                        
+                        &:after{
+                            right: 0;
+                            bottom: 15px;
+                            width: 45px;
+                            height: 15px;
+                            background: $red_main;
+                            z-index: 2;
+                        }
+                    }
+                }
+                
+                &:nth-child(2),
+                &:nth-child(4){
+                    a{
+                        background-color: #96D9F1;
+                    }
+                }
+                
+                &:nth-child(3){
+                    a{
+                        background-color: $blue_main;
+                    }
+                }
+                
+                a{
+                    border-color: transparent;
+                    color: white;
+                    font-weight: bold;
+                    opacity: .99;
+                    position: relative;
+                    
+                    &:before{
+                        display: none;
+                    }
+                    
+                    &:after{
+                        content: '';
+                        position: absolute;
+                    }
+                    
+                    &:hover{
+                        text-decoration: underline;
+                        @include filter(brightness(1.09));
+                    }
+                }
+            }
+        }
+        
+        .content_tips{
+            background-color: rgba(218, 218, 218, 0.28);
+            background-image: url(../img/tip.png);
+            background-repeat: no-repeat;
+            background-position: center 9px;
+            background-size: 255px;
+            padding: 1rem 2rem 0rem;
+            min-height: 192px;
+            
+            .tip{
+                width: 100%;
+                margin: 0;
+                padding: 1.5rem 1rem 0;
+                
+                .description{
+                    p{
+                        text-align: justify;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.content_plan{
+    .item{
+        margin: 10px 5px;
+        display: inline-block;
+        width: calc(100% / 2 - 12px);
+        vertical-align: top;
+        padding: 1rem;
+        border: solid thin #323232;
+        text-align: center;
+        
+        h1{
+            margin: .5rem 0;
+            font-size: 20px;
+            color: #323232;
+            text-transform: uppercase;
+        }
+        
+        p,
+        a{
+            text-align: justify;
+        }
+        
+        a{
+            float: right;
+            margin-top: 1rem;
+        }
+    }
+}
+
+.container_car{
+    position: relative;
+    padding: 1rem;
+    
+    .close{
+        cursor: pointer;
+        color: #323232;
+        font-size: 1rem;
+        padding: .15rem .35rem;
+        position: absolute;
+        top: .15%;
+        right: .15%;
+        @include border-radius(50%);
+        @include transition(all .5s ease);
+        
+        &:hover{
+            color: $red_main;
+            @include transform(rotate(360deg));
+        }
+    }
+}
+
+// estilos al carro
+.car{
+    padding: .5rem;
+    border: solid thin #323232;
+    
+    header{
+        text-align: center;
+        h3{
+            margin: 0;
+            font-size: 16px;
+        }
+        
+        a{
+            font-size: 14px;
+        }
+    }
+    
+    section{
+        counter-reset: items-car;
+        max-height: 220px;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+    
+    .item{
+        position: relative;
+        padding: .15rem 0 .15rem 1.5rem;
+        margin: .25rem 0;
+        overflow: hidden;
+        
+        .close{
+            font-size: 9px;
+            top: 0;
+        }
+        
+        h3{
+            text-align: center;
+            font-size: 14px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        
+        span{
+            font-size: 11px;
+        }
+        
+        &:before{
+            position: absolute;
+            font-size: 32px;
+            content: counter(items-car);
+            counter-increment: items-car;
+            top: 0;
+            left: 0;
+        }
+        
+        &:after{
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 5px;
+            height: 1px;
+            margin: auto;
+            background: #323232;
+            content: '';
+            @include transition(width .15s ease);
+        }
+        
+        &:hover{
+            &:after{
+                width: 70%;
+            }
+        }
+    }
+}

@@ -1,0 +1,99 @@
+// Estilos para los casos de exito
+.content_cases{
+    padding: 60px 0;
+    background-image: url(../img/arrow_top.png);
+    background-position: center 1.5rem;
+    background-size: 59%;
+    background-repeat: no-repeat;
+    
+    .case{
+        position: relative;
+        
+        > div{
+            max-width: calc(100% / 2);
+            padding: .3rem 2.5rem 1.85rem;
+            position: relative;
+            
+            .text{
+                color: white;
+                font-size: 1.2rem;
+                text-align: left;
+                margin: 0;
+            }
+        }
+        
+        .situation{
+            background: $blue_main;
+            
+            &:before{
+                position: absolute;
+                top: -46px;
+                left: 0;
+                content: 'Situación';
+                font-size: 1.8rem;
+                color: white;
+                background: #00B3E4;
+                padding: .15rem;
+                text-align: center;
+                min-width: 196px;
+                font-family: 'Colab';
+            }
+        }
+        
+        .strategy{
+            background: #96D9F1;
+            margin: 5px 0 0;
+            
+            &:before{
+                position: absolute;
+                top: -57px;
+                right: 0;
+                content: 'Estrategia';
+                font-size: 1.8rem;
+                color: white;
+                background: #96D9F1;
+                padding: .15rem;
+                text-align: center;
+                min-width: 196px;
+                font-family: 'Colab';
+                border: solid 5px white;
+                border-right-width: 0;
+                border-color: white transparent transparent white;
+                box-sizing: border-box;
+            }
+            
+            .text{
+                text-align: right;
+            }
+        }
+        
+        .result{
+            max-width: 100%;
+            margin: 5px 0 0;
+            background: $red_main;
+            
+            &:before{
+                position: absolute;
+                top: -57px;
+                left: 0;
+                content: 'Resultados';
+                font-size: 1.8rem;
+                color: white;
+                background: $red_main;
+                padding: .15rem;
+                text-align: center;
+                min-width: 196px;
+                font-family: 'Colab';
+                border: solid 5px white;
+                border-left-width: 0;
+                border-color: white white transparent transparent;
+                box-sizing: border-box;
+            }
+        }
+        
+        .image_case{
+            float: right;
+            max-width: calc(100% / 2);
+        }
+    }
+}

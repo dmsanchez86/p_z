@@ -1,0 +1,70 @@
+// Estilos contenedor del buscador
+.search{
+    .input_search{
+        position: relative;
+        padding: .15rem .15rem 0;
+        border: solid thin $border_gray;
+        @include transform( scale(.7) );
+        
+        #search{
+            padding: 0 2.3rem 0 .71rem;
+            width: 100%;
+            @include box-sizing(border-box);
+            margin-bottom: 0;
+            border: 0;
+            color: $color_gray;
+            
+            + label.active{
+                color: $blue_main;
+                @include transform( translateY(-197%) );
+            }
+        }
+        
+        .icon{
+            position: absolute;
+            right: 10px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            z-index: 2;
+            
+            &:hover,
+            &.active{
+                &:after,
+                &:before{
+                    border-color: $blue_main;
+                }
+            }
+            
+            &:after,
+            &:before{
+                content: '';
+                position: absolute;
+                @include transition( border .4s ease );
+            }
+            
+            &:before{
+                margin: auto;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: 20px;
+                height: 20px;
+                @include border-radius( 50% );
+                border: thin solid $border_gray;
+            }
+            
+            &:after{
+                bottom: 6px;
+                right: 0;
+                border-top: solid thin $border_gray;
+                @include transform( rotate(35deg) );
+                width: 8px;
+            }
+        }
+    }
+}

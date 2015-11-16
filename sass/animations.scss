@@ -1,0 +1,274 @@
+// Animación para las nubes
+@-webkit-keyframes move_cloud{
+    0%,100%{
+        @include transform( translate(-10px, -5px) );
+    }
+    
+    50%{
+        @include transform( translate(70px, 5px) );
+    }
+}
+
+@-moz-keyframes move_cloud{
+    0%,100%{
+        @include transform( translate(-10px, -5px) );
+    }
+    
+    50%{
+        @include transform( translate(70px, 5px) );
+    }
+}
+
+@-ms-keyframes move_cloud{
+    0%,100%{
+        @include transform( translate(-10px, -5px) );
+    }
+    
+    50%{
+        @include transform( translate(70px, 5px) );
+    }
+}
+
+@-o-keyframes move_cloud{
+    0%,100%{
+        @include transform( translate(-10px, -5px) );
+    }
+    
+    50%{
+        @include transform( translate(70px, 5px) );
+    }
+}
+
+@keyframes move_cloud{
+    0%,100%{
+        @include transform( translate(-10px, -5px) );
+    }
+    
+    50%{
+        @include transform( translate(70px, 5px) );
+    }
+}
+
+// Animación para las aves
+@-webkit-keyframes fly{
+    0%, 50%, 100%{
+        @include transform( translate(0) rotate(0) scale(1) );
+    }
+    
+    25%{
+        @include transform( translate(5px, 3px) rotate(7deg) scale(.9) );
+    }
+    
+    75%{
+        @include transform( translate(-5px, 3px) rotate(-7deg) scale(1.1) );
+    }
+}
+
+// Animacion para el fondo que me determina que hora es
+@-webkit-keyframes rotate{
+    0%{
+        @include transform( rotate(0deg) );
+    }
+    100%{
+        @include transform( rotate(360deg) );
+    }
+}
+
+@-moz-keyframes rotate{
+    0%{
+        @include transform( rotate(0deg) );
+    }
+    100%{
+        @include transform( rotate(360deg) );
+    }
+}
+
+@-o-keyframes rotate{
+    0%{
+        @include transform( rotate(0deg) );
+    }
+    100%{
+        @include transform( rotate(360deg) );
+    }
+}
+
+@keyframes rotate{
+    0%{
+        @include transform( rotate(0deg) );
+    }
+    100%{
+        @include transform( rotate(360deg) );
+    }
+}
+
+// Animacion para la hoja
+@-webkit-keyframes sheet{
+    0%,100%{
+        @include transform( translate(0px, 0px) rotate(0deg) );
+    }
+    25%{
+        @include transform( translate(-50px, -10px) rotate(5deg) );
+    }
+    50%{
+        @include transform( translate(-70px, 0px) rotate(-5deg) );
+    }
+    75%{
+        @include transform( translate(-90px, 10px) rotate(5deg) );
+    }
+}
+
+// animation to we make
+@-webkit-keyframes top_move{
+    0%{
+        @include transform((scale(1) rotate(0)));
+    }
+    100%{
+        @include transform((scale(.9) rotate(-3deg)));
+    }
+}
+
+@-moz-keyframes top_move{
+    0%{
+        @include transform((scale(1) rotate(0)));
+    }
+    100%{
+        @include transform((scale(.9) rotate(-3deg)));
+    }
+}
+
+@-o-keyframes top_move{
+    0%{
+        @include transform((scale(1) rotate(0)));
+    }
+    100%{
+        @include transform((scale(.9) rotate(-3deg)));
+    }
+}
+
+@keyframes top_move{
+    0%{
+        @include transform((scale(1) rotate(0)));
+    }
+    100%{
+        @include transform((scale(.9) rotate(-3deg)));
+    }
+}
+
+// animation to scale widget
+@-webkit-keyframes scale_widget{
+    0%,100%{
+        @include transform((scale(1) rotate(0)));
+    }
+    50%{
+        @include transform((scale(.5) rotate(0deg)));
+    }
+}
+
+// animation to move diagonak
+@-webkit-keyframes movement_widget{
+    0%,22%,44%,66%,88%, 100%{
+        @include transform(translate3d(0px, 0px, 0) rotate(0deg) rotatey(5deg));
+    }
+    11%{
+        @include transform(translate3d(25px, -25px, 0) rotate(3deg) rotatey(3deg));
+    }
+    33%{
+        @include transform(translate3d(-25px, 25px, 0) rotate(-3deg) rotatey(-5deg));
+    }
+    55%{
+        @include transform(translate3d(25px, 25px, 0) rotate(2deg) rotatey(5deg));
+    }
+    77%{
+        @include transform(translate3d(-25px, -25px, 0) rotate(-2deg) rotatey(-5deg));
+    }
+    88%{
+        @include transform(translate3d(0px, 0px, 0) rotate(360deg) rotatey(0deg) translatez(-50px));
+    }
+    99%{
+        @include transform(translate3d(0px, 0px, 0) rotate(0deg) rotatey(0deg) translatez(0px));
+    }
+}
+
+// animation to move background
+@-webkit-keyframes background_btn_red{
+    0%{
+        background-image: -webkit-linear-gradient(left, $red_main, #e0043e, #e0043e, #e0043e,#e0043e,#e0043e,#e0043e,#e0043e);
+        background-image: linear-gradient(left, $red_main, #e0043e, #e0043e, #e0043e,#e0043e,#e0043e,#e0043e,#e0043e);
+    }
+    10%{
+        background-image: -webkit-linear-gradient(left, #e0043e,$red_main, #e0043e, #e0043e, #e0043e,#e0043e,#e0043e,#e0043e,#e0043e, #e0043e, #e0043e, #e0043e,#e0043e,#e0043e,#e0043e,#e0043e);
+        background-image: linear-gradient(left, #e0043e,$red_main, #e0043e, #e0043e, #e0043e,#e0043e,#e0043e,#e0043e,#e0043e, #e0043e, #e0043e, #e0043e,#e0043e,#e0043e,#e0043e,#e0043e);
+    }
+    20%{
+        background-image: -webkit-linear-gradient(left, #e0043e, #e0043e,$red_main, #e0043e, #e0043e,#e0043e,#e0043e,#e0043e,#e0043e, #e0043e, #e0043e, #e0043e,#e0043e,#e0043e,#e0043e,#e0043e);
+        background-image: linear-gradient(left, #e0043e, #e0043e,$red_main, #e0043e, #e0043e,#e0043e,#e0043e,#e0043e,#e0043e, #e0043e, #e0043e, #e0043e,#e0043e,#e0043e,#e0043e,#e0043e);
+    }
+    30%{
+        background-image: -webkit-linear-gradient(left, #e0043e, #e0043e, #e0043e,$red_main, #e0043e,#e0043e,#e0043e,#e0043e,#e0043e, #e0043e, #e0043e, #e0043e,#e0043e,#e0043e,#e0043e,#e0043e);
+        background-image: linear-gradient(left, #e0043e, #e0043e,$red_main, #e0043e, #e0043e,#e0043e,#e0043e,#e0043e,#e0043e, #e0043e, #e0043e, #e0043e,#e0043e,#e0043e,#e0043e,#e0043e);
+    }
+    40%{
+        background-image: -webkit-linear-gradient(left, #e0043e, #e0043e, #e0043e, #e0043e,$red_main,#e0043e,#e0043e,#e0043e,#e0043e, #e0043e, #e0043e, #e0043e,#e0043e,#e0043e,#e0043e,#e0043e);
+        background-image: linear-gradient(left, #e0043e, #e0043e, #e0043e,$red_main, #e0043e,#e0043e,#e0043e,#e0043e,#e0043e, #e0043e, #e0043e, #e0043e,#e0043e,#e0043e,#e0043e,#e0043e);
+    }
+    50%{
+        background-image: -webkit-linear-gradient(left, #e0043e, #e0043e, #e0043e, #e0043e,#e0043e,$red_main,#e0043e,#e0043e,#e0043e, #e0043e, #e0043e, #e0043e,#e0043e,#e0043e,#e0043e,#e0043e);
+        background-image: linear-gradient(left, #e0043e, #e0043e, #e0043e, #e0043e,$red_main,#e0043e,#e0043e,#e0043e,#e0043e, #e0043e, #e0043e, #e0043e,#e0043e,#e0043e,#e0043e,#e0043e);
+    }
+    60%{
+        background-image: -webkit-linear-gradient(left, #e0043e, #e0043e, #e0043e, #e0043e,#e0043e,#e0043e,$red_main,#e0043e,#e0043e, #e0043e, #e0043e, #e0043e,#e0043e,#e0043e,#e0043e,#e0043e);
+        background-image: linear-gradient(left, #e0043e, #e0043e, #e0043e, #e0043e,#e0043e,$red_main,#e0043e,#e0043e,#e0043e, #e0043e, #e0043e, #e0043e,#e0043e,#e0043e,#e0043e,#e0043e);
+    }
+    70%{
+        background-image: -webkit-linear-gradient(left, #e0043e, #e0043e, #e0043e, #e0043e,#e0043e,#e0043e,#e0043e,$red_main,#e0043e, #e0043e, #e0043e, #e0043e,#e0043e,#e0043e,#e0043e,#e0043e);
+        background-image: linear-gradient(left, #e0043e, #e0043e, #e0043e, #e0043e,#e0043e,#e0043e,$red_main,#e0043e,#e0043e, #e0043e, #e0043e, #e0043e,#e0043e,#e0043e,#e0043e,#e0043e);
+    }
+}
+
+@-webkit-keyframes background_btn_blue{
+    0%{
+        background-image: -webkit-linear-gradient(left, #0BA5D0, #0099C3, #0099C3, #0099C3,#0099C3,#0099C3,#0099C3,#0099C3);
+        background-image: linear-gradient(left, #0BA5D0, #0099C3, #0099C3, #0099C3,#0099C3,#0099C3,#0099C3,#0099C3);
+    }
+    10%{
+        background-image: -webkit-linear-gradient(left, #0099C3,#0BA5D0, #0099C3, #0099C3, #0099C3,#0099C3,#0099C3,#0099C3,#0099C3, #0099C3, #0099C3, #0099C3,#0099C3,#0099C3,#0099C3,#0099C3);
+        background-image: linear-gradient(left, #0099C3,#0BA5D0, #0099C3, #0099C3, #0099C3,#0099C3,#0099C3,#0099C3,#0099C3, #0099C3, #0099C3, #0099C3,#0099C3,#0099C3,#0099C3,#0099C3);
+    }
+    20%{
+        background-image: -webkit-linear-gradient(left, #0099C3, #0099C3,#0BA5D0, #0099C3, #0099C3,#0099C3,#0099C3,#0099C3,#0099C3, #0099C3, #0099C3, #0099C3,#0099C3,#0099C3,#0099C3,#0099C3);
+        background-image: linear-gradient(left, #0099C3, #0099C3,#0BA5D0, #0099C3, #0099C3,#0099C3,#0099C3,#0099C3,#0099C3, #0099C3, #0099C3, #0099C3,#0099C3,#0099C3,#0099C3,#0099C3);
+    }
+    30%{
+        background-image: -webkit-linear-gradient(left, #0099C3, #0099C3, #0099C3,#0BA5D0, #0099C3,#0099C3,#0099C3,#0099C3,#0099C3, #0099C3, #0099C3, #0099C3,#0099C3,#0099C3,#0099C3,#0099C3);
+        background-image: linear-gradient(left, #0099C3, #0099C3,#0BA5D0, #0099C3, #0099C3,#0099C3,#0099C3,#0099C3,#0099C3, #0099C3, #0099C3, #0099C3,#0099C3,#0099C3,#0099C3,#0099C3);
+    }
+    40%{
+        background-image: -webkit-linear-gradient(left, #0099C3, #0099C3, #0099C3, #0099C3,#0BA5D0,#0099C3,#0099C3,#0099C3,#0099C3, #0099C3, #0099C3, #0099C3,#0099C3,#0099C3,#0099C3,#0099C3);
+        background-image: linear-gradient(left, #0099C3, #0099C3, #0099C3,#0BA5D0, #0099C3,#0099C3,#0099C3,#0099C3,#0099C3, #0099C3, #0099C3, #0099C3,#0099C3,#0099C3,#0099C3,#0099C3);
+    }
+    50%{
+        background-image: -webkit-linear-gradient(left, #0099C3, #0099C3, #0099C3, #0099C3,#0099C3,#0BA5D0,#0099C3,#0099C3,#0099C3, #0099C3, #0099C3, #0099C3,#0099C3,#0099C3,#0099C3,#0099C3);
+        background-image: linear-gradient(left, #0099C3, #0099C3, #0099C3, #0099C3,#0BA5D0,#0099C3,#0099C3,#0099C3,#0099C3, #0099C3, #0099C3, #0099C3,#0099C3,#0099C3,#0099C3,#0099C3);
+    }
+    60%{
+        background-image: -webkit-linear-gradient(left, #0099C3, #0099C3, #0099C3, #0099C3,#0099C3,#0099C3,#0BA5D0,#0099C3,#0099C3, #0099C3, #0099C3, #0099C3,#0099C3,#0099C3,#0099C3,#0099C3);
+        background-image: linear-gradient(left, #0099C3, #0099C3, #0099C3, #0099C3,#0099C3,#0BA5D0,#0099C3,#0099C3,#0099C3, #0099C3, #0099C3, #0099C3,#0099C3,#0099C3,#0099C3,#0099C3);
+    }
+    70%{
+        background-image: -webkit-linear-gradient(left, #0099C3, #0099C3, #0099C3, #0099C3,#0099C3,#0099C3,#0099C3,#0BA5D0,#0099C3, #0099C3, #0099C3, #0099C3,#0099C3,#0099C3,#0099C3,#0099C3);
+        background-image: linear-gradient(left, #0099C3, #0099C3, #0099C3, #0099C3,#0099C3,#0099C3,#0BA5D0,#0099C3,#0099C3, #0099C3, #0099C3, #0099C3,#0099C3,#0099C3,#0099C3,#0099C3);
+    }
+}
+
+@-webkit-keyframes test_scale{
+    0%,100%,50%{
+        @include transform(translatex(0px) rotate(0deg));
+    }
+    
+    25%{
+        @include transform(translatex(-2px) rotate(-1deg));
+    }
+    75%{
+        @include transform(translatex(2px) rotate(1deg));
+    }
+}

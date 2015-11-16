@@ -1,0 +1,86 @@
+// Estilos para la puerta del inicio
+.door{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    
+    &:after,
+    &:before{
+        content: '';
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        display: block;
+        top: 0;
+        @include transition( transform .3s ease );
+    }
+    
+    &:before{
+        left: 0;
+        @include radial( linear, (left, $blue_main, $blue_main_) );
+    }
+    
+    &:after{
+        right: 0;
+        @include radial( linear, (left, $blue_main_, $blue_main) );
+    }
+    
+    &.open{
+        &:before{
+            @include transform( translatex(-100%) );
+            border-right: 5px solid $red_main;
+        }
+        
+        &:after{
+            @include transform( translatex(100%) );
+            border-left: 5px solid $red_main;
+        }
+    }
+    
+    &.close{
+        &:before{
+            @include transform( translatex(0%) );
+            border-right: 5px solid $red_main;
+        }
+        
+        &:after{
+            @include transform( translatex(0%) );
+            border-left: 5px solid $red_main;
+        }
+    }
+    
+    .loader{
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 10px;
+        background: $red_main;
+        height: 0;
+        z-index: 11;
+    }
+    
+    .porcentage{
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 80px;
+        height: 80px;
+        border: solid 5px $red_main;
+        z-index: 12;
+        background: $blue_main;
+        font-family: 'Covered By Your Grace', cursive;
+        line-height: 70px;
+        font-size: 2rem;
+        text-align: center;
+        color: white;
+        @include border-radius(50%);
+    }
+}

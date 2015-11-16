@@ -1,0 +1,268 @@
+// Styles for the body page
+body{
+    padding-top: 6%;
+    position: relative;
+    background-image: url(../img/pixel_superior.png),url(../img/pixel_inferior.png);
+    background-size: contain, contain;
+    background-repeat: no-repeat, no-repeat;
+    background-position: top center, 80% 78%;
+    overflow-x: hidden;
+    
+    &.night{
+        background-image: url(../img/pixel_superior.png), url(../img/pixel_inferior.png), -webkit-radial-gradient(center, #262261, #000 );
+    
+        .navigator{
+            ul{
+                li{
+                    a{
+                        color: white;
+                    }
+                }
+            }
+            
+            &.open{
+                
+                ul{
+                    li{
+                        a{
+                            color: #323232;
+                        }
+                    }
+                }
+                
+                &:after{
+                    border-color: transparent;
+                }
+            }
+        }
+        
+        .content_home {
+            .content_house {
+                margin-top: 7rem;
+                
+                .step {
+                    p {
+                        color: #EDEEF3;
+                        text-shadow: 0 0 2px #111;
+                    }
+                }
+            }
+            
+            .message{
+                h3,h4{
+                    color: #C6C7CC;
+                }
+            }
+            
+            &.wemake{
+                .title.center{
+                    + p{
+                        color: white;
+                    }
+                }
+            }
+        }
+        
+        .search {
+            .input_search{
+                border-color: white;
+                
+                .icon{
+                    &:before,
+                    &:after{
+                        border-color: white;
+                    }
+                }
+            }
+        }
+        
+        .input-field {
+            label{
+                color: white;
+            }
+            
+            input{
+                &[type=search]{
+                    color: white;
+                    
+                    &:focus{
+                        background: transparent;
+                    }
+                }
+            }
+        }
+        
+        .door{
+            &:before{
+                @include radial( linear, (left, $red_main, $red_main_) );
+            }
+            
+            &:after{
+                @include radial( linear, (left, $red_main_, $red_main) );
+            }
+            
+            &.open{
+                &:before{
+                    border-right: 5px solid $blue_main;
+                }
+                
+                &:after{
+                    border-left: 5px solid $blue_main;
+                }
+            }
+            
+            &.close{
+                &:before{
+                    border-right: 5px solid $blue_main;
+                }
+                
+                &:after{
+                    border-left: 5px solid $blue_main;
+                }
+            }
+            
+            .loader{
+                background: $blue_main;
+            }
+            
+            .porcentage{
+                border: solid 5px $blue_main;
+                background: $red_main;
+                
+            }
+        }
+        
+        .description{
+            p{
+                color: white;
+            }
+        }
+        
+        .tip{
+            background: transparent;
+        }
+        
+        .container_btn_support.price:hover, .container_btn_support.price:focus {
+            background: transparent;
+        }
+        
+        .owl-carousel.owl-loaded {
+            background: white;
+            background-clip: content-box;
+        }
+        
+        .content_cases{
+            background-color: white;
+            padding: 46px 0 0 0;
+        }
+        
+        .content_widgets {
+            background: $color_night;
+            
+            .row_widgets {
+                
+                .widget{
+                    border-color: $color_night;
+                    
+                    &.webs_design,
+                    &.admin_networkings,
+                    &.design_mark{
+                        &:before{
+                            border-color: transparent transparent transparent $color_night;
+                        }
+                        
+                        &:hover,
+                        &:focus{
+                            &:before{
+                                border-color: transparent transparent transparent $red_main;
+                            }
+                        }
+                    }
+                    
+                    &.admin_networkings{
+                        &:hover,
+                        &:focus{
+                            &:before{
+                                border-color: transparent transparent transparent $blue_main;
+                            }
+                        }
+                    }
+                    
+                    &.implements_crm,
+                    &.digital_strategies,
+                    &.apps_developer,
+                    &.internet_paute{
+                        &:before{
+                            border-color: $color_night transparent transparent transparent;
+                        }
+                        
+                        &:hover,
+                        &:focus{
+                            &:before{
+                                border-color: $blue_main transparent transparent transparent;
+                            }
+                        }
+                    }
+                    
+                    &.implements_crm,
+                    &.internet_paute{
+                        &:hover,
+                        &:focus{
+                            &:before{
+                                border-color: $red_main transparent transparent transparent;
+                            }
+                        }
+                    }
+                    
+                    &.send_emails,
+                    &.send_messages{
+                        &:before{
+                            border-color: transparent transparent $color_night transparent;
+                        }
+                        
+                        &:hover,
+                        &:focus{
+                            &:before{
+                                border-color: transparent transparent  $blue_main transparent;
+                            }
+                        }
+                    }
+                    
+                    &.online_stores{
+                        &:before{
+                            border-color: transparent $color_night transparent transparent;
+                        }
+                        &:hover,
+                        &:focus{
+                            &:before{
+                                border-color: transparent $red_main transparent transparent;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        .content_cites{
+            > .text{
+                color: white;
+            }
+        }
+    }
+    
+    &.case_page{
+        background-position: top center, 80% 75.5rem;
+    }
+    
+    &.we{
+        background-position: top center, 80% 157rem;
+    }
+    
+}
+
+// Estilo global para centrar parrafos
+p.center{
+    text-align: center;
+    color: $border_gray;
+    font-size: 1.2rem;
+}

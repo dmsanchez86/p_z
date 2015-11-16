@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="es" ng-app="zopp">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Zopp Agency">
+        <meta name="author" content="Daniel Mauricio Sánchez">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <meta name="fragment" content="!"> 
+        
+        <title>Zopp Group - Agencia Interactiva</title>
+        
+        <!-- Librerias Css -->
+        <link rel="stylesheet" href="css/materialize.min.css" type="text/css" />
+        <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons" type="text/css" />
+        <link rel="stylesheet" href="css/animate.css" type="text/css" />
+        <link rel="stylesheet" href="css/owl.carousel.css" type="text/css" />
+        
+        <!-- Zendesk -->
+        <style type="text/css" media="screen, projection">
+            @import url(//assets.zendesk.com/external/zenbox/v2.6/zenbox.css);
+        </style>
+        
+        <!-- Estilos Propios -->
+        <link rel="stylesheet" href="css/main.css?v=1.1.2">
+        
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="img/favicon.png?VER=!ZXC" />
+        
+        <!-- Humans -->
+        <link type="text/plain" rel="author" href="http://zopp.co/humans.txt" />
+        
+    </head>
+    
+    <body>
+        <!-- Div principal -->
+        <div class="main">
+            <div class="container">
+                <header>
+                    <div class="main_header">
+                        <div class="row">
+                            <div class="col m5 s12">
+                                <div class="logo">
+                                    <a href="#!/" title="Zopp Group"><img src="img/logo.png" class="responsive-img"></a>
+                                </div>
+                            </div>
+                            <div class="col m7 s12">
+                                <div class="search">
+                                    <div class="search_content">
+                                        <div class="row">
+                                            <div class="col m6">&nbsp;</div>
+                                            <div class="input-field col m6 s12" style="margin: 0">
+                                              <div class="input_search">
+                                                  <span class="icon">&nbsp;</span>
+                                                  <input id="search" type="search">
+                                                  <label for="search">Buscar...</label>
+                                              </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content_button_navigator">
+                                    <span>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </span>
+                                </div>
+                                <div class="navigator">
+                                    <ul>
+                                        <li><a href="#!/casos-exito" class="waves-effect waves-light">Casos éxito</a></li>
+                                        <li><a href="#!/lo-que-hacemos" class="waves-effect waves-light">Lo que hacemos</a></li>
+                                        <li><a href="#!/nosotros" class="waves-effect waves-light">Nosotros</a></li>
+                                        <li><a href="#!/contacto" class="waves-effect waves-light">Contacto</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <section ng-view></section>
+            </div>
+            <footer class="footer">
+                <div class="row" style="margin: 0">
+                    <div class="col m3 s12">
+                        <h2>Manizales, Colombia</h2>
+                        <div>
+                            <img src="img/localizacion.png"></img>
+                            <span>Calle 76a #21 73</span>
+                        </div>
+                        <div>
+                            <img src="img/telefono.png"></img>
+                            <span>(+57)(6) 886 86 73</span>
+                        </div>
+                        <div>
+                            <h4>Ventas</h4>
+                        </div>
+                        <div>
+                            <img src="img/mensaje.png"></img>
+                            <span>mercadeo@zoppagency.com</span>
+                        </div>
+                        <div>
+                            <img src="img/wt.png"></img>
+                            <span>(+57) 301 - 611 -1451</span>
+                        </div>
+                    </div>
+                    <div class="col m3 s12">
+                        <h2>Florida, USA</h2>
+                        <div>
+                            <span>Estamos a un paso de nuestro sueño Americano.</span>
+                        </div>
+                        <div>
+                            <img src="img/telefono.png"></img>
+                        </div>
+                        <div>
+                            <img src="img/mensaje.png"></img>
+                        </div>
+                        <div>
+                            <img src="img/wt.png"></img>
+                        </div>
+                    </div>
+                    <div class="col m3 s12">
+                        <h2>Medellín, Colombia</h2>
+                        <div>
+                            <span>Estamos fabricando nuestra Sede Paisa.</span>
+                        </div>
+                        <div>
+                            <img src="img/telefono.png"></img>
+                        </div>
+                        <div>
+                            <img src="img/mensaje.png"></img>
+                        </div>
+                        <div>
+                            <img src="img/wt.png"></img>
+                        </div>
+                    </div>
+                    <div class="col m3 s12">
+                        <img src="img/logo_white.png" class="responsive-img">
+                        <div class="networkers_content">
+                            <span>Síguenos en nuestras redes: </span><br>
+                            <a href="http://facebook.com/agenciazopp" target="_blank" title="Zopp Agency On Facebook"><img src="img/fb.png" class="networs"></a>
+                            <a href="http://twitter.com/zoppagency" target="_blank" title="Zopp Agency On Twitter"><img src="img/tw.png" class="networs"></a>
+                        </div>
+                        <div class="container_btn_support">
+                            <i class="material-icons">settings_applications</i>
+                            <span>Necesitas Soporte?</span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <div class="pfooter">
+                Agencia Especializada en Desarrollo Software, Estrategias y Medios Digitales | Manizales - Colombia
+            </div>
+        </div>
+        
+        <!-- Panel Lateral -->
+        <div class="panel_left">
+            <ul>
+                <li>
+                    <div class="icon">
+                        <img src="img/dinero.png">
+                        <span>Cotizaciones</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="icon">
+                        <img src="img/telefono_soporte.png">
+                        <span>Soporte</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="icon">
+                        <img src="img/carrito.png">
+                        <span>Pagos</span>  
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Cargador stilo puerta que se abre -->
+        <div class="door">
+            <div class="loader"></div>
+            <div class="porcentage">
+                <span>0</span>%
+            </div>
+        </div>
+        
+        <!-- Carrito -->
+        <div class="content_car">
+            <div data-ng-include="'modules/car.html'" data-ng-controller="carController"></div>
+        </div>
+        
+        <!-- Librerias JavaScript -->
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="js/angular.router.js"></script>
+        <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+        <script type="text/javascript" src="js/viewportchecked.js"></script>
+        <script type="text/javascript" src="//assets.zendesk.com/external/zenbox/v2.6/zenbox.js"></script>
+        <script>
+            if (typeof(Zenbox) !== "undefined") {
+                Zenbox.init({
+                  dropboxID:   "20326496",
+                  url:         "https://zoppagency.zendesk.com",
+                  tabTooltip:  "Soporte",
+                  tabImageURL: "https://p4.zdassets.com/external/zenbox/images/tab_es_support.png",
+                  tabColor:    "black",
+                  tabPosition: "Left"
+                });
+            }
+        </script>
+        
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        
+          ga('create', 'UA-29822618-1', 'auto');
+          ga('send', 'pageview');
+        </script>
+        
+        <!--Start of Zopim Live Chat Script-->
+        <script type="text/javascript">
+            window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+            d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+            _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+            $.src="//v2.zopim.com/?1AVWgjYJjIcVUOwGgVhisi6asGmVvvyP";z.t=+new Date;$.
+            type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+        </script>
+        <!--End of Zopim Live Chat Script-->
+        
+        <!-- Scripts  -->
+        <script src="js/products.js"></script>
+        <script src="js/routes.js"></script>
+        <script>
+            // Funcion que me permite saber cuando un usuario quiere actualizar o salirse de la página
+            window.onbeforeunload = confirmExit;
+            function confirmExit(){
+              localStorage.removeItem('load');
+            }
+        </script>
+    </body>
+</html>

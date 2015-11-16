@@ -1,0 +1,8 @@
+// Estilos sobre-escritos de Material Design
+.input-field input[type=search] {
+    width: calc(100% - 1rem);
+    
+    &:focus{
+        border-bottom: 1px solid $blue_main;
+    }
+}

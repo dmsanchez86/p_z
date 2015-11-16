@@ -1,0 +1,255 @@
+<div class="content_home product">
+    <div class="row">
+        <div class="col m5 s12">
+            <div class="container_img main">
+                <img src="img/products/{{ data.main_image }}" class="responsive-img">
+            </div>
+            <div class="container_btn_support price">
+                <i class="material-icons" style="vertical-align: middle;">store</i>
+                <span>Realizar Cotización?</span>
+            </div>
+            <hgroup>
+                <h3 class="sub_title">
+                    {{ data.title_discusion }}
+                </h3>
+            </hgroup>
+            <div class="description">
+                <p ng-repeat="t in data.text_discusion track by $index">
+                    {{ t }}
+                </p>
+            </div>
+        </div>
+        <div class="col m1 l1 s12">&nbsp;</div>
+        <div class="col m6 s12">
+            <hgroup>
+                <h1 class="title">
+                    {{ data.title }} <b>{{ data.title_bold }}</b>
+                </h1>
+                <h3 class="sub_title">
+                    {{ data.sub_title }}
+                </h3>
+            </hgroup>
+            
+            <div class="description">
+                <p ng-repeat="t in data.text track by $index">
+                    {{ t }}
+                </p>
+            </div>
+            <div class="container_img">
+                <img src="img/products/{{ data.url_graphic }}" class="responsive-img">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col m12">
+            <div class="content_tabs product">
+                <ul class="tabs product_">
+                    <li class="tab col s12" ng-repeat="t_t in data.titles_tips track by $index"><a href="#tip{{ $index }}" class="active">{{ t_t }}</a></li>
+                </ul>
+                <div class="content_tips">
+                    <div class="tip" ng-repeat="tip in data.tips track by $index" id="tip{{ $index }}">
+                        <div class="description">
+                            <p ng-repeat="t in tip.text_description track by $index">
+                                {{ t }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row buttons" style="margin:0">
+        <div class="col m7">
+            <div class="container_btn_support ask">
+                <i class="material-icons" style="vertical-align: middle;">settings_voice</i>
+                <span>Preguntanos</span>
+            </div>
+            <div class="container_btn_support price">
+                <i class="material-icons" style="vertical-align: middle;">store</i>
+                <span>Realizar Cotización?</span>
+            </div>
+            <div class="slogan">
+                <div class="title">¿Pero es Suficiente para tu negocio?</div>
+                <div class="description">
+                    <p>
+                        Si tu desarrollo es nuevo y deseas darlo a conocer, Zopp te ayuda a que tengas éxito en este proceso y a que logres alcanzar tu meta.
+                    </p>
+                    <div class="image_description">
+                        <img src="img/car.png" class="responsive-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col m3">
+            <div class="container_img">
+                <img src="img/team_work.png" class="responsive-img">
+            </div>
+        </div>
+        <div class="col m1">
+            &nbsp;
+        </div>
+    </div>
+    <div class="row">
+        <div class="col m12">
+            <div class="container_btn_bigs">
+                <div>
+                    <span>Sincroniza Tu Negocio</span>
+                </div>
+                <div>
+                    <span>Ver Demo</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin:0">
+        <div class="col m12">
+            <div class="title center">
+                Casos de <b>Éxito</b> <img src="img/hearts.png" style="max-width: 35px">
+            </div>
+            
+            <div class="owl-carousel content_cases_product">
+              <div class="case">
+                  <div class="row">
+                      <div class="col m4">
+                          <div class="title">
+                              TORRES <b>GUARÍN</b>
+                          </div>
+                          <div class="description">
+                              <p>
+                                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                  sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                                  magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                                  quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                                  Ut wisi enim ad minim veniam.
+                              </p>
+                          </div>
+                      </div>
+                      <div class="col m4">
+                          <div class="title small">
+                              ESTRATEGIA
+                          </div>
+                          <div class="description">
+                              <p>
+                                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                  sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                                  magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                                  quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                                  Ut wisi enim ad minim veniam,
+                                  quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                              </p>
+                          </div>
+                          <div class="container_img">
+                              <img src="img/cases/torres.png" class="responsive-img">
+                          </div>
+                      </div>
+                      <div class="col m4">
+                          <div class="title small">
+                              DIRECTOR TORRES
+                          </div>
+                          <div class="description">
+                              <p>
+                                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                  sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                                  magna aliquam erat volutpat.
+                              </p>
+                          </div>
+                          <div class="title small">
+                              RESULTADOS
+                          </div>
+                          <div class="description">
+                              <p>
+                                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                  sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                                  magna aliquam erat volutpat.
+                                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                  sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                                  magna aliquam erat volutpat.
+                                  Lorem ipsum dolor sit amet.
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="case">
+                  <div class="row">
+                      <div class="col m4">
+                          <div class="title">
+                              TORRES <b>GUARÍN</b>
+                          </div>
+                          <div class="description">
+                              <p>
+                                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                  sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                                  magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                                  quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                                  Ut wisi enim ad minim veniam.
+                              </p>
+                          </div>
+                      </div>
+                      <div class="col m4">
+                          <div class="title small">
+                              ESTRATEGIA
+                          </div>
+                          <div class="description">
+                              <p>
+                                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                  sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                                  magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                                  quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                                  Ut wisi enim ad minim veniam,
+                                  quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                              </p>
+                          </div>
+                          <div class="container_img">
+                              <img src="img/cases/torres.png" class="responsive-img">
+                          </div>
+                      </div>
+                      <div class="col m4">
+                          <div class="title small">
+                              DIRECTOR TORRES
+                          </div>
+                          <div class="description">
+                              <p>
+                                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                  sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                                  magna aliquam erat volutpat.
+                              </p>
+                          </div>
+                          <div class="title small">
+                              RESULTADOS
+                          </div>
+                          <div class="description">
+                              <p>
+                                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                  sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                                  magna aliquam erat volutpat.
+                                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                  sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                                  magna aliquam erat volutpat.
+                                  Lorem ipsum dolor sit amet.
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col m12">
+            <div class="description">
+                <p style="margin: 1rem auto 2rem; max-width: 90%;display:block;text-align:center; font-size: .95rem;">
+                    "Si estas en el sitio de ZOPP GROUP, es porque estas buscando servicios relacionados con, empresas de desarrollo de software, empresas de software en Colombia. En Zopp Group encontraras todas las soluciones digitales que necesites."
+                </p>
+            </div>
+            <div class="container_btn_bigs">
+                <div>
+                    <span>Realizar Cotización</span>
+                </div>
+                <div>
+                    <span>Preguntar</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

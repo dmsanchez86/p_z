@@ -1,0 +1,208 @@
+// Estilos del menu
+.navigator{
+    
+    ul{
+        @include flex(flex);
+        
+        li{
+            text-align: center;
+            border: solid thin $blue_main;
+            border-color: transparent $blue_main;
+            z-index: 0;
+            @include flex-item(1);
+            @include transition( border .25s .4s ease );
+            
+            &:first-child,&:nth-child(2){
+                border-right-color: transparent;
+            }
+            
+            &:last-child{
+                border-left-color: transparent;
+            }
+            
+            &:hover,
+            &:focus,
+            &.active{
+                border-color: $blue_main;
+            }
+            
+            a{
+                display: block;
+                padding: .35rem 0;
+                color: #323232;
+                position: relative;
+                font-weight: bold;
+                font-family: 'Bebas';
+                font-size: 1.3rem;
+                text-transform: normal;
+                @include transition( (text-shadow .25s ease-out, color .2s .3s ease-in-out) );
+                
+                &:hover,
+                &:focus{
+                    // text-shadow: none;
+                }
+                
+                &:after,
+                &:before{
+                    content: '';
+                    width: 0;
+                    height: 1px;
+                    background: $blue_main;
+                    position: absolute;
+                    left: 0;
+                    z-index: -3;
+                    margin: auto;
+                    right: 0;
+                    @include transition( (width .2s ease, height .15s .25s ease) );
+                }
+                
+                &:after{
+                    top: 0%;
+                }
+                
+                &:before{
+                    bottom: 0%;
+                }
+                
+                &:hover,
+                &.active{
+                    color: white;
+                    
+                    &:after,
+                    &:before{
+                        width: 102%;
+                        height: 50%;
+                    }
+                }
+            }
+        }
+    }
+    
+    &.open{
+        align-items: center;
+        background-image: url(../img/pixel_superior.png),url(../img/pixel_inferior.png);
+        background-repeat: no-repeat, no-repeat;
+        background-size: contain, contain;
+        background-position: top center, bottom center;
+        @include flex( flex );
+        @include transform( translateY( 0% ) skewy(0deg) );
+        
+        ul{
+            max-width: 320px;
+            display: block;
+            margin: 0 auto;
+            
+            li{
+                display: block;
+                border-color: transparent;
+                
+                a{
+                    font-size: 2rem;
+                    text-transform: uppercase;
+                    padding: 1rem;
+                    border-bottom: 2px solid $blue_main;
+                    
+                    &:hover{
+                        color: #B30030;
+                        
+                        &:after,
+                        &:before{
+                            display: none;
+                        }
+                    }
+                }
+                
+                &:last-child{
+                    a{
+                        border-color: transparent;
+                    }
+                }
+            }
+        }
+        
+        &:after{
+            position: absolute;
+            content: '';
+            border: 50vw solid transparent;
+            bottom: 0;
+            left: 0;
+            border-color: transparent transparent;
+        }
+    }
+}
+
+// Estilos del boton del menu despegable
+.content_button_navigator{
+    display: none;
+    
+    &.active{
+        z-index: 9999;
+        position: absolute;
+        right: 54px;
+        
+        span{
+            border-color: $blue_main;
+            
+            &:hover,
+            &:focus{
+                border-color: $red_main;
+                
+                > div{
+                    background: $red_main;
+                }
+            }
+            
+            > div{
+                background: $blue_main;
+                
+                &:first-child{
+                    @include transform( rotate(49deg) translatey(5px) translateX(5px) );
+                }
+                
+                &:last-child{
+                    @include transform( rotate(-49deg) translatey(-5px) translateX(5px) );
+                }
+                
+                &:nth-child(2){
+                    opacity: 0;
+                }
+            }
+        }
+    }
+    
+    span{
+        cursor: pointer;
+        float: right;
+        height: 30px;
+        width: 30px;
+        margin-right: 32px;
+        border: solid 2px $border_gray;
+        padding: .15rem;
+        @include box-sizing( content-box );
+        @include border-radius( 2px );
+        @include transition( all .18s ease-in );
+        
+        &:hover,
+        &:focus{
+            border-color: $blue_main;
+            
+            > div{
+                background: $blue_main;
+            }
+        }
+        
+        > div{
+            width: 20px;
+            height: 2px;
+            background: $border_gray;
+            margin: 5.5px auto;
+            @include border-radius( 1px );
+            @include transition( all .18s .1s ease-out );
+        }
+    }
+}
+
+// Estilos del logo
+.logo{
+    padding-top: 1rem;
+}

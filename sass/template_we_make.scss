@@ -1,0 +1,463 @@
+// Estilos para el template que hacemos
+.content_widgets{
+    @include perspective(800px);
+    @include perspective-origin(center);
+    
+    .row_widgets{
+        @include flex(flex);
+        
+        &:nth-child(1),
+        &:nth-child(3){
+            .widget{
+                min-height: 325px;
+                
+                &:first-child{
+                    @include flex-item(1 1 20%);
+                }
+            }
+        }
+        
+        &:nth-child(2){
+            .widget{
+                min-height: 350px;
+            }
+        }
+        
+        .column_widgets{
+            display: inline-block;
+            
+            &.half{
+                width: calc(100% / 2);
+                
+                &:nth-child(1){
+                    
+                    .wall{
+                        &:nth-child(2){
+                            .widget{
+                                min-height: 350px / 2 - 0.01px;
+                            }
+                        }
+                    }
+                }
+                
+                &:nth-child(2){
+                    .wall{
+                        &.column{
+                            &:last-child{
+                                .widget{
+                                    min-height: 350px / 2 - 0.01px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .wall{
+                display: inline-block;
+                vertical-align: top;
+                width: 100%;
+                
+                &.column{
+                    width: calc(100% / 2 - 5px);
+                }
+            }
+        }
+        
+        .widget{
+            border: solid thin #323232;
+            text-align: center;
+            position: relative;
+            border: solid 10px white;
+            cursor: pointer;
+            opacity: .99;
+            overflow: hidden;
+            @include transform-origin(left center);
+            @include box-sizing(border-box);
+            @include flex-item(1);
+            @include perspective(80px);
+            @include perspective-origin(center);
+            
+            span{
+                position: absolute;
+                margin: auto;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                width: 90%;
+                color: white;
+                font-family: 'Colab_';
+                font-weight: 300;
+                font-size: 2.9rem;
+                height: 87px;
+                line-height: 1;
+                @include transition(all .25s ease);
+                
+                b{
+                    font-family: 'Roboto';
+                    font-size: 2.3rem;
+                    display: block;
+                    line-height: 1;
+                }
+            }
+            
+            &:hover{
+                
+                span{
+                    @include animation(top_move .25s 1 ease);
+                    @include animation-fill-mode(both);
+                    text-shadow: 0 0 2px #323232;
+                }
+            }
+            
+            &:focus{
+                
+                span{
+                    @include animation((movement_widget 6s 1s infinite linear));
+                }
+            }
+            
+            &:active{
+                span{
+                    @include animation(scale_widget 3s 1 cubic-bezier(0.16, 0.36, 0, 1.12));
+                }
+            }
+            
+            // backgrounds
+            &.software_developer,
+            &.admin_networkings,
+            &.send_emails,
+            &.send_messages,
+            &.digital_strategies,
+            &.apps_developer,
+            &.digital_media_police{
+                background: $blue_main;
+                
+                &:after{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: white;
+                    z-index: -1;
+                    content: '';
+                    border: solid 3px $blue_main;
+                    left: 0;
+                    @include transform-origin(0 0);
+                    @include transform(( rotate(-90deg) rotatex(-113deg) rotatey(41deg) translateZ(-1700px) ));
+                    @include transition(transform .5s ease);
+                    @include box-sizing(border-box);
+                }
+                
+                &:hover,
+                &:focus{
+                    span{
+                        color: $blue_main;
+                        
+                        b{
+                            color: $blue_main;
+                        }
+                    }
+                    
+                    &:after{
+                        @include transform(( rotate(0deg) rotatex(0deg) rotatey(0deg) translateZ(0px) ));
+                    }
+                }
+            }
+            
+            &.webs_design,
+            &.implements_crm,
+            &.design_mark,
+            &.online_stores,
+            &.internet_paute{
+                background: $red_main;
+                
+                &:after{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: white;
+                    z-index: -1;
+                    content: '';
+                    border: solid 3px $red_main;
+                    left: 0;
+                    @include transform-origin(100% 100%);
+                    @include transform(( rotate(90deg) rotatex(-113deg) rotatey(41deg) translateZ(-1700px) translatex(100px)));
+                    @include transition(transform .5s ease);
+                    @include box-sizing(border-box);
+                }
+                
+                &:hover,
+                &:focus{
+                    span{
+                        color: $red_main;
+                        
+                        b{
+                            color: $red_main;
+                        }
+                    }
+                    
+                    &:after{
+                        @include transform(( rotate(0deg) rotatex(0deg) rotatey(0deg) translateZ(0px) translatex(0)));
+                    }
+                }
+            }
+            
+            // setups
+            &.software_developer{
+                span{
+                    font-size: 3rem;
+                }
+            }
+            
+            &.digital_media_police{
+                min-height: 210px;
+            }
+            
+            &.webs_design,
+            &.admin_networkings{
+                border-left-width: 4px;
+            }
+            
+            &.admin_networkings{
+                span{
+                    font-size: 2rem;
+                    
+                    b{
+                        font-size: 1.85rem;
+                    }
+                }
+            }
+            
+            &.implements_crm,
+            &.send_emails,
+            &.send_messages,
+            &.design_mark{
+                border-top-width: 4px;
+            }
+            
+            &.implements_crm{
+                text-align: left;
+                border-right-width: 4px;
+                
+                span{
+                    font-size: 2rem;
+                    
+                    b{
+                        font-size: 1.5rem;
+                        
+                        &:nth-child(2){
+                            display: inline;
+                        }
+                    }
+                    
+                    em{
+                        font-style: normal;
+                        font-size: 2.2rem;
+                        vertical-align: sub;
+                    }
+                }
+            }
+            
+            &.send_emails,
+            &.send_messages{
+                border-right-width: 0;
+                
+                span{
+                    height: 51px;
+                    font-size: 1.7rem;
+                    
+                    b{
+                        font-size: 2.2rem;
+                    }
+                }
+            }
+            
+            &.design_mark{
+                min-height: 230px;
+                
+                span{
+                    height: 130px;
+                    font-size: 2rem;
+                    
+                    b{
+                        font-size: 1.15rem;
+                        
+                        &:last-child{
+                            font-size: 4.7rem;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+            
+            &.apps_developer,
+            &.internet_paute{
+                border-right-width: 3px;
+                border-left-width: 4px;
+            }
+            
+            &.apps_developer{
+                
+                span{
+                    height: 51px;
+                    font-size: 2.3rem;
+                    
+                    b{
+                        font-size: 1rem;
+                    }
+                }
+            }
+            
+            &.digital_strategies{
+                min-height: 230px;
+                border-right-width: 6px;
+                
+                span{
+                    font-size: 2.7rem;
+                    height: 76px;
+                    
+                    b{
+                        font-size: 2.15rem;
+                    }
+                }
+            }
+            
+            // Arrows
+            &.webs_design,
+            &.admin_networkings,
+            &.design_mark{
+                &:before{
+                    position: absolute;
+                    margin: auto;
+                    top: 0;
+                    left: 0px;
+                    bottom: 0;
+                    max-height: 35px;
+                    border: solid white;
+                    border-width: 20px 0px 20px 16px;
+                    border-color: transparent transparent transparent white;
+                    content: '';
+                }
+            }
+            
+            &.implements_crm,
+            &.digital_strategies,
+            &.apps_developer,
+            &.internet_paute{
+                &:before{
+                    position: absolute;
+                    margin: auto;
+                    top: 0;
+                    left: 0px;
+                    right: 0;
+                    max-width: 35px;
+                    border: solid white;
+                    border-width: 16px 20px 0px 20px;
+                    border-color: white transparent transparent transparent;
+                    content: '';
+                }
+            }
+            
+            &.digital_strategies{
+                &:before{
+                    right: calc(100% / 2 );
+                }
+            }
+            
+            &.send_emails,
+            &.send_messages{
+                &:before{
+                    position: absolute;
+                    margin: auto;
+                    bottom: 0;
+                    left: 0px;
+                    right: 0;
+                    max-width: 35px;
+                    border: solid white;
+                    border-width: 0px 20px 16px 20px;
+                    border-color: transparent transparent white transparent;
+                    content: '';
+                }
+            }
+            
+            &.online_stores{
+                span{
+                    height: 115px;
+                }
+                
+                &:before{
+                    position: absolute;
+                    margin: auto;
+                    bottom: 0;
+                    top: calc(100% / 2);
+                    right: 0;
+                    max-height: 35px;
+                    border: solid white;
+                    border-width: 20px 16px 20px 0px;
+                    border-color: transparent white transparent transparent;
+                    content: '';
+                }
+            }
+            
+            // hover before
+            &.admin_networkings{
+                &:hover,
+                &:focus{   
+                    &:before{
+                        border-color: transparent transparent transparent $blue_main;
+                    }
+                }
+            }
+            
+            &.webs_design,
+            &.design_mark{
+                &:hover,
+                &:focus{   
+                    &:before{
+                        border-color: transparent transparent transparent $red_main;
+                    }
+                }
+            }
+            
+            &.implements_crm,
+            &.internet_paute{
+                &:hover,
+                &:focus{   
+                    &:before{
+                        border-color: $red_main transparent transparent transparent;
+                    }
+                }
+            }
+            
+            &.send_messages,
+            &.send_emails{
+                &:hover,
+                &:focus{   
+                    &:before{
+                        border-color: transparent transparent $blue_main transparent;
+                    }
+                }
+            }
+            
+            &.apps_developer,
+            &.digital_strategies{
+                &:hover,
+                &:focus{   
+                    &:before{
+                        border-color: $blue_main transparent transparent transparent;
+                    }
+                }
+            }
+            
+            &.online_stores{
+                &:hover,
+                &:focus{   
+                    &:before{
+                        border-color: transparent $red_main transparent transparent;
+                    }
+                }
+            }
+        }
+    }
+}

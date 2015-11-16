@@ -1,0 +1,716 @@
+@import 'fonts';
+@import 'variables';
+@import 'functions';
+@import 'add';
+
+*{
+    @include reset();
+    @include box-sizing(border-box);
+}
+
+// Estilos a los scrollbars
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background-color: $blue_main;
+    border-left: 1px solid $blue_main_;
+}
+::-webkit-scrollbar-thumb {
+    background-color: $red_main;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: $red_main_;
+}
+
+body,html{
+    width: 100%;
+    font-size: 100%;
+}
+
+@import 'body';
+@import 'search';
+@import 'navigator';
+@import 'door';
+@import 'materialize_extra';
+@import 'template_home';
+@import 'panel_left';
+@import 'footer';
+ 
+// Estilos del video
+.video_intro {
+    margin-top: 1rem;
+    border: 5px solid black;
+    padding: .25em;
+    background-color: black;
+    min-height: 250px;
+    position: relative;
+    @include border-radius(3px);
+    @include box-shadow((2px 2px 4px #aaa,-2px -2px 2px #aaa));
+    
+    iframe{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+}
+
+// Estilos del contenedor del boton soporte
+.container_btn_support{
+    border-radius: 24px;
+    border: solid thin transparent;
+    background: white;
+    text-transform: uppercase;
+    padding: .5rem 1rem;
+    text-align: center;
+    max-width: 100%;
+    width: 226px;
+    margin: 1.5rem auto 0;
+    cursor: pointer;
+    font-family: 'Colab_';
+    @include transition( all .25s ease );
+    
+    i{
+        vertical-align: middle;
+        font-size: 1rem;
+        color: $red_main;
+    }
+    
+    span{
+        @include transition( all .15s ease );
+        color: $red_main;
+    }
+    
+    &:hover,
+    &:focus{
+        border-color: white;
+        background: transparent;
+        
+        span,i{
+            color: white;
+        }
+    }
+    
+    &.price{
+        background: $red_main;
+        width: 245px;
+        margin: 2rem 0;
+        
+        i{
+            color: white;
+        }
+        
+        span{
+            color: white;
+            vertical-align: middle;
+        }
+        
+        &:hover,
+        &:focus{
+            border-color: $red_main;
+            background: white;
+            
+            span, i{
+                color: $red_main;
+            }
+        }
+    }
+}
+
+// Estilos para los titulo
+.title{
+    color: $blue_main;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin: .5rem 0;
+    
+    b{
+        color: $red_main;
+    }
+    
+    &.medium{
+        font-size: 1.5rem;
+    }
+    
+    &._center{
+        text-align: center;
+    }
+}
+
+// Estilos a los subtitulos
+.sub_title{
+    margin: 1rem 0;
+    font-size: 16px;
+    font-weight: bold;
+    
+}
+
+// Estilos al contenedor tips
+.content_tips{
+    .tip{
+        width: calc(100% / 4 - 3px);
+        display: inline-block;
+        padding: 1rem .2rem 0rem .8rem;
+        vertical-align: top;
+        
+        .title{
+            font-weight: bold;
+            font-size: 13.5px;
+            color: #323232;
+        }
+    }
+}
+
+.row.buttons{
+    .col{
+        text-align: center;
+        
+        .container_btn_support{
+            display: inline-block;
+            margin: 0;
+            margin-top: 1rem;
+            
+            &.ask{
+                background: #00B3E4;
+                border-color: #00B3E4;
+                
+                
+                span, i{
+                    color: white;
+                }
+                
+                &:hover{
+                    background: white;
+                    
+                    span,i{
+                        color: #00B3E4;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Estilos al contenedor producto
+.product{
+    padding-top: 3rem;
+    background-color: white;
+}
+
+// estilos a los slogan de la pagina
+.slogan{
+    width: 550px;
+    max-width: 100%;
+    margin: 2.5rem auto 1rem;
+    padding: 1.3rem;
+    
+    .description{
+        @include flex(flex);
+        
+        > p,
+        > div{
+            @include flex-item(1);
+        }
+        
+        p{
+            background: $blue_main;
+            color: white;
+            font-size: 14px;
+            text-align: left;
+            margin: 0;
+            padding: 1rem;
+        }
+        
+        > div{
+            max-width: 140px;
+            margin: 0 0rem 0 .3rem;
+            padding: 1rem;
+            background-color: rgba(151, 217, 241, 0.32);  
+        }
+    }
+    
+    .title{
+        text-align: left;
+        color: $blue_main;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+}
+
+// Estilos a los contenedores de imagenes
+.container_img{
+    text-align: center;
+    
+    &.main{
+        img{
+            width: 82%;
+        }
+    }
+}
+
+// Estilos para los tips que aprecen en los contenidos
+.tip{
+    margin: 1rem 0;
+    padding: 1rem;
+    
+    .content_tip{
+        @include flex( flex );
+        
+        .description{
+            background: $blue_main;
+            padding: 1.5rem 1rem;
+            
+            p{
+                color: white;
+                font-size: .7rem;
+            }
+        }
+        
+        .image{
+            min-width: 30%;
+            margin-left: 1rem;
+            background: rgba(0, 179, 228, 0.13);
+        }
+    }
+    
+    .buttons{
+        margin-top: 1rem;
+        @include flex( flex );
+        
+        > div{
+            padding: .25rem .3rem;
+            background: $red_main;
+            position: relative;
+            @include flex-item( 1 );
+            
+            &:before,
+            &:after{
+                content: '';
+                position: absolute;
+                top: 0;
+            }
+            
+            &:after{
+                right: -32px;
+                border: solid 16px $red_main;
+                border-color: transparent transparent transparent $red_main;
+            }
+            
+            &:last-child{
+                margin-left: 1.5rem;
+                padding: .25rem 0 .25rem .1rem;
+                padding-left: .5rem;
+            }
+            
+            img,span{
+                vertical-align: middle;
+            }
+            
+            span{
+                color: white;
+                font-size: .8rem;
+            }
+        }
+    }
+}
+
+// Estilos para los parrafos de descripcion
+.description{
+    p{
+        font-size: .75rem;
+        color: #4C4F56;
+        margin: .25rem 0 1rem;
+    }
+}
+
+// Estilos para los textos
+.text{
+    text-align: justify;
+    margin: 1rem 0;
+    color: $text;
+    font-family: 'Colab_';
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+.content_cites{
+    counter-reset: count-cites; 
+}
+
+.cite{
+    position: relative;
+    background: #F6F6F6;
+    padding: 1rem 2.5rem;
+    margin: 2.5rem 0 1.5rem;
+    
+    &:before{
+       position: absolute;
+       top: 0;
+       left: 0;
+       border: solid 2px $red_main;
+       width: 100%;
+       content: '';
+    }
+    
+    &:after{
+        content: counter(count-cites)'.';
+        counter-increment: count-cites; 
+        width: 30px;
+        height: 30px;
+        top: -30px;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        left: 0;
+        line-height: 2;
+        position: absolute;
+        background: $red_main;
+    }
+    
+    ul{
+        color: $text;
+        font-family: 'Colab_';
+        font-size: 1.6rem;
+        line-height: 1;
+        
+        li{
+            &:before{
+                content: '- ';
+            }
+        }
+    }
+}
+
+// Estilos del owl carousel
+.owl-carousel {
+    
+    &.owl-loaded {
+        padding: 0 2rem;
+    }
+    .owl-controls {
+        .owl-nav {
+            .owl-prev,
+            .owl-next{
+                background: $red_main;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                color: $red_main;
+                height: 60%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 22px 49px;
+            }
+            
+            .owl-prev{
+                left: 0;
+                background-image: url(../img/narrow_left.png);
+            }
+            
+            .owl-next{
+                right: 0;
+                background-image: url(../img/narrow_rigth.png);
+            }
+        }
+    }
+}
+
+.owl-stage-outer{
+    margin: 1rem 0 3rem;
+}
+
+@import 'template_cases';
+@import 'template_we_make';
+
+// estilos de los botones grandes
+.container_btn_bigs{
+    padding: 0 1rem;
+    margin: 1rem 1rem 1rem 0;
+    
+    > div{
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        cursor: pointer;
+        min-height: 104px;
+        padding: 1rem 0 1rem 3.3rem;
+        @include transform-style(preserve-3d);
+        @include perspective(100px);
+        @include transition(all .15s ease);
+        
+        &:nth-child(1){
+            background: $red_main;
+            width: calc(100% - 30% - 2.4rem );
+            margin-right: 1.5rem;
+            
+            &:after{
+                position: absolute;
+                left: 100%;
+                content: '';
+                top: 0;
+                border-left: 25px solid $red_main;
+                border-top: 55px solid transparent;
+                border-bottom: 50px solid transparent;
+                @include transition(all .15s ease);
+            }
+            
+            &:hover{
+                background: rgb(224, 4, 62);
+                @include animation(background_btn_red .5s infinite ease);
+                
+                span{
+                    text-shadow: 0 0 3px #fff;
+                }
+                
+                &:after{
+                    border-left-color: rgb(224, 4, 62);
+                }
+            }
+        }
+        
+        &:last-child{
+            width: 30%;
+            background: $blue_main;
+            
+            &:before{
+                position: absolute;
+                left: 0;
+                content: '';
+                top: 0;
+                border-left: 25px solid white;
+                border-top: 55px solid transparent;
+                border-bottom: 50px solid transparent;
+            }
+            
+            &:after{
+                position: absolute;
+                left: 100%;
+                content: '';
+                top: 0;
+                border-left: 14px solid $blue_main;
+                border-top: 55px solid transparent;
+                border-bottom: 50px solid transparent;
+                @include transition(all .15s ease);
+            }
+            
+            &:hover{
+                background: #0099C3;
+                @include animation(background_btn_blue .5s infinite ease);
+                
+                span{
+                    text-shadow: 0 0 3px #fff;
+                }
+                
+                &:after{
+                    border-left-color: #0099C3;
+                }
+            }
+        }
+        
+        
+        &:hover{
+            span{
+                @include animation(test_scale 3s infinite ease);
+            }    
+        }
+        
+        span{
+            font-size: 2.5rem;
+            line-height: 1.7;
+            color: white;
+            @include transition(all .25s ease);
+        }
+    }
+}
+
+// Estilos del carrusel del template product
+.content_cases_product{
+    background: #DEF3FB;
+    padding: 1rem 2rem 0rem!important;
+    
+    .title{
+        font-size: 4.2rem;
+        line-height: 1.1;
+        text-align: left;
+        
+        &.small{
+            font-size: 1.2rem;
+            font-weight: 100;
+            margin: 1rem 0;
+            color: $red_main;
+        }
+    }
+    
+    .description{
+        p{
+            color: $blue_main;
+            text-align: justify;
+        }
+    }
+    
+    .col{
+        padding: 0 1.2rem;
+    }
+    
+    .owl-controls .owl-nav .owl-next{
+        right: -31px;
+    }
+    .owl-controls .owl-nav .owl-prev{
+        left: -31px;
+    }
+    
+    img[src*="case"]{
+        opacity: 1!important;
+    }
+    
+    .owl-stage-outer{
+        margin-bottom: 1.3rem;
+    }
+}
+
+// Estilos a los modales
+#modal_tipe_1,
+#modal_tipe_2{
+    padding: 1.5rem;
+    
+    &.modal{
+        width: 780px;
+        max-width: 100%;
+        height: auto;
+        
+        .title{
+            font-size: 1.6rem;
+        }
+    }
+}
+
+// Estilos a los botones de agregar al carriot
+.container_btn_car{
+    text-align: center;
+    
+    button{
+        display: inline-block;
+        position: relative;
+        color: white;
+        background: $red_main;
+        font-weight: bold;
+        font-size: 1.2rem;
+        padding: .7rem 1rem;
+        text-transform: uppercase;
+        margin: .25rem 0;
+        border: solid thin $red_main;
+        @include border-radius(3px);
+        @include transition(all 0.25s cubic-bezier(0.53, -0.07, 0.35, 1.07));
+        
+        &:hover{
+            color: $red_main;
+            background: white;
+        }
+    }
+}
+
+// estilos al icono del carro de compras
+.car_shoppping{
+    font-size: 2rem;
+    color: #323232;
+    @include transition(all .15s ease);
+    
+    &:hover{
+        color: $blue_main;
+    }
+}
+
+.status_item{
+    text-align: center;
+    
+    span{
+        font-size: 14px;
+        color: #444;
+        
+        b{
+            font-size: 20px;
+        }
+        
+    }
+}
+
+.item_corusel{
+    max-width: 230px;
+    cursor: pointer;
+    border: solid thin transparent;
+    @include transition(all .25s ease);
+    @include box-sizing(border-box);
+    
+    &:hover{
+        border-color: #666;
+    }
+}
+
+.dropdown-content {
+    li{
+        > span {
+            color: $blue_main;
+        }
+    }
+}
+
+[type="radio"]{
+    &:checked{
+        + label{
+            &:after{
+                border: 2px solid $red_main;
+                background-color: $red_main;
+            }
+        }
+    }
+    
+    &:not(:checked),
+    &:checked{
+        + label{
+            color: #444;
+        }
+    }
+}
+
+input[type=text],
+input[type=email],
+input[type=number]{
+    &:focus{
+        &:not([readonly]){
+            border-bottom: 1px solid $blue_main;
+            box-shadow: 0 1px 0 0 $blue_main;
+            
+            + label{
+                color: $blue_main;
+            }
+        }
+    }
+}
+
+#zenbox_tab{
+    display: none!important;
+}
+
+img[src*="case"],img[src*="quehacemo"],img[src*="nosot"],.owl-carousel,.row.we,.content_cases,.content_widgets,.widget,.content_home.product{
+    opacity: 0!important;
+}
+
+.zopim{
+    z-index: 8 !important;
+}
+
+.meshim_widget_widgets_ConnAwareSubmit{
+    background: red!important;
+}
+
+@import 'car';
+@import 'queries';
+@import 'animations';

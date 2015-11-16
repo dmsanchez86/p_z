@@ -1,0 +1,281 @@
+// Estilos del template home
+.content_home{
+    
+    .message{
+        margin: 1.5rem 0 2rem;
+        padding-bottom: 5rem;
+        background-image: url(../img/pixel_medio.png);
+        background-position: bottom center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        
+        hgroup{
+            text-align: center;
+            overflow: auto;
+        }
+        
+        h3,h4{
+            color: $border_gray;
+        }
+        
+        h3{ 
+            font-size: 1.6rem; 
+        }
+        
+        h4{
+            margin-top: 0;
+            
+            em{
+                font-size: .9rem;
+                display: block;
+            }
+        }
+        
+        h1{ 
+            font-size: 3rem; 
+            color: $blue_main;
+            font-weight: bold;
+            margin: .25rem 0;
+            
+            b{
+                color: $red_main;
+            }
+        }
+        
+        h4{ font-size: 1rem; }
+    }
+    
+    .content_house{
+        position: relative;
+        padding: 2rem 3rem 0;
+        
+        .bird{
+            position: absolute;
+            top: 0;
+            @include animation( fly 5s infinite linear );
+            // @include animation-direction( alternate-reverse );
+            
+            .big{
+                width: 55px;
+            }
+            
+            .medium{
+                width: 38px;
+            }
+            
+            &._1{
+                width: 45px;
+                left: 6rem;
+                top: 5rem;
+                @include animation-delay( .5s );
+            }
+            
+            &._2{
+                left: 9rem;
+                top: 7rem;
+                z-index: -2;
+                @include animation-delay( 1s );
+            }
+            
+            &._3{
+                left: 13rem;
+                top: 4.5rem;
+                z-index: -2;
+                @include animation-delay( 1.5s );
+            }
+            
+            &._4{
+                z-index: -2;
+                right: 18rem;
+                top: 5rem;
+                @include animation-delay( 1s );
+            }
+        }
+        
+        .main-img{
+            z-index: 10;
+            @include transform( translatex(40px) );
+        }
+        
+        .cloud{
+            position: absolute;
+            top: 2rem;
+            left: 0;
+            width: 78%;
+            max-width: 100%;
+            z-index: -1;
+            @include animation( move_cloud 13s infinite ease );
+            
+            &.last{
+                z-index: -3;
+                @include animation( move_cloud 21s infinite ease-in );
+                top: 11.5rem;
+                width: 100%;
+            }
+            
+            &.morning,
+            &.afternoon,
+            &.night{
+                position: absolute;
+                top: 11rem;
+                right: 0;
+                z-index: -4;
+                left: inherit;
+                
+                &.last{
+                    left: 0;
+                    top: 2rem;
+                    z-index: -3;
+                    right: inherit;
+                    opacity: .7;
+                    width: 70%;
+                    @include animation(move_cloud 13s infinite ease-out);
+                }
+            }
+        }
+        
+        .moon{
+            position: absolute;
+            top: -7%;
+            left: 0;
+            max-width: 85px;
+            @include animation( rotate 50s infinite linear );
+        }
+        
+        .star{
+            position: absolute;
+            top: -7%;
+            margin: auto;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            
+            @include animation(move_cloud 30s infinite linear);
+        }
+        
+        .morning_back{
+                position: absolute;
+                top: -60px;
+                width: 100%;
+                left: 0;
+                right: 0;
+                max-width: 100%;
+                z-index: -5;
+                margin: auto;
+                @include animation( rotate 110s infinite linear );
+        }
+        
+        .step{
+            position: absolute;
+            max-width: 100%;
+            width: 30%;
+            background-size: 100%;
+            opacity: 0;
+            background-repeat: no-repeat;
+            @include box-sizing(content-box);
+            
+            &:nth-child(odd){
+                right: 0;
+                padding: 2rem 2rem 3rem 7rem;
+                text-align: right;
+                background-image: url(../img/linea1.png);
+                background-position: bottom right;
+            }
+            
+            &:nth-child(even){
+                left: 0;
+                padding: 2rem 7rem 3rem 2rem;
+                text-align: left;
+                background-image: url(../img/linea2.png);
+                background-position: bottom left;
+            }
+            
+            &._1{
+                top: 5em;
+            }
+            
+            &._2{
+                top: 1em;
+                padding-right: 2em;
+            }
+            
+            &._3{
+                top: 26em;
+                padding-left: 1em;
+            }
+            
+            &._4{
+                top: 40em;
+                padding-right: 2em;
+            }
+            
+            &._5{
+                top: 49em;
+                padding-left: 2em;
+                background-image: url(../img/linea5.png);
+            }
+            
+            h3{
+                color: $blue_main;
+                text-transform: uppercase;
+                margin: .15rem 0;
+                font-size: 1.1rem;
+                font-family: 'Colab_';
+                
+                &:before{
+                    color: $red_main;
+                    font-size: 2rem;
+                    content: attr(number) ". ";
+                }
+            }
+            
+            p{
+                font-size: .85rem;
+                color: $border_gray;
+            }
+        }
+        
+        .sheet{
+            position: absolute;
+            bottom: 6%;
+            left: 7%;
+            width: 92px;
+            height: 67px;
+            @include animation( sheet 50s infinite linear );
+            @include animation-direction( reverse );
+        }
+    }
+    
+    &.cases,
+    &.wemake{
+        margin: 1rem 0 3rem;
+        padding-bottom: 13rem;
+    }
+    
+    &.we{
+        padding-bottom: 8.5rem;
+    }
+    
+    &.wemake{
+        .title.center{
+            padding-bottom: 0;
+            
+            + p{
+                margin: 0 0 2rem;
+            }
+        }
+    }
+    
+    &.product{
+        .title.center{padding: .25rem 0;}
+    }
+    
+    .title.center{padding: 2rem 0 3rem;}
+    .title.center[data-url]{
+        background-image: url(../img/title.png);
+        background-repeat: no-repeat;
+        background-position: 35% 8%;
+        background-size: calc( 100% - 90% );
+    }
+    
+}

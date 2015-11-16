@@ -1,0 +1,228 @@
+@mixin button_default{
+	// Estilos a los botones
+	.container_btn{
+		position: relative;
+		text-align: center;
+
+		button{
+			background-color: $green_default;
+			padding: .5rem 15.3%;
+			color: white;
+			border: solid thin $green_default;
+			display: inline-block;
+			text-transform: uppercase;
+			position: relative;
+			font-size: 1.8rem;
+			@include box-shadow(0 5px $green_default_shadow);
+			@include border-radius(2px);
+			overflow: hidden;
+
+			&:hover{
+				top: 2px;
+				@include box-shadow(0 3px $green_default_shadow);
+				outline: none;
+			}
+
+			&:focus{
+				outline: none;
+			}
+
+			&:active{
+				top: 5px;
+				@include box-shadow(0 0px $green_default_shadow);
+			}
+		}
+
+		&.see_offer{
+			margin-bottom: .45rem;
+		    text-align: left;
+	    	text-indent: 40px;
+
+			button{
+				padding: .1rem .35rem;
+				font-size: 1rem;
+				@include box-shadow(0 3px $green_default_shadow);
+
+				&:hover{
+					top: 1px;
+					@include box-shadow(0 2px $green_default_shadow);
+					outline: none;
+				}
+
+				&:focus{
+					outline: none;
+				}
+
+				&:active{
+					top: 3px;
+					@include box-shadow(0 0px $green_default_shadow);
+				}
+			}
+		}
+	}
+}
+
+@mixin menu_options {
+	// Estilos a la barra de progresos del perfil
+	.progress_porcentage{
+		width: 25px;
+		height: 25px;
+		@include border-radius(50%);
+		margin: 2.5px;
+		background-color: white;
+		color: #aaa;
+		font-size: .9rem;
+	    text-align: center;
+	    line-height: 25px;
+	    z-index: 2;
+	    position: relative;
+	    display: inline-block;
+
+	    &:before{
+	    	display: inline-block;
+	    	position: absolute;
+	    	width: 31px;
+	    	height: 31px;
+	    	top: -3px;
+	    	left: -3px;
+	    	z-index: -2;
+	    	border-color: transparent;
+	    	border-width: 3px;
+	    	border-style: solid;
+	    	content: '';
+			@include border-radius(50%);
+			@include transform(rotate(45deg));
+	    }
+
+	    &:after{
+	    	width: 25px;
+			height: 25px;
+			position:absolute;
+			top: 0;
+			left: 0;
+			content: '';
+			background-color: white;
+			z-index: -1;
+			border: solid thin #aaa;
+			@include border-radius(50%);
+	    }
+
+		&.p0{
+	    	&:before{
+	    		border-color: transparent;
+	    	}
+	    }
+
+	    &.p25{
+	    	&:before{
+	    		border-color: $green_default transparent transparent transparent;
+	    	}
+	    }
+
+	    &.p50{
+	    	&:before{
+	    		border-color: $green_default $green_default transparent transparent;
+	    	}
+	    }
+
+	    &.p75{
+	    	&:before{
+	    		border-color: $green_default $green_default $green_default transparent;
+	    	}
+	    }
+
+	    &.p100{
+	    	&:before{
+	    		border-color: $green_default;
+	    	}
+	    }
+
+	}
+
+	// Estilos al menu desplegable de opciones principales
+	.dropdown-menu {
+
+		&.settings{
+			width: 250px!important;
+		}
+
+		> li {
+			&.header{
+				padding: .5rem 1rem 0;
+				position: relative;
+
+				span{
+					vertical-align: middle;
+					font-size: .9em;
+					line-height: 2.9;
+				}
+
+				div{
+					display: inline-block;
+					vertical-align: middle;
+					position: absolute;
+					right: 1.2rem;
+					top: .7rem;
+				}
+			}
+
+			> a{
+
+			}
+		}
+	}
+
+	// Estilos menu comprador
+	.menu-comprador {
+		.nav {
+			> li {
+				> a{
+					position: relative;
+
+					&:after{
+						position: absolute;
+						width: 0;
+						height: 4px;
+						content: '';
+						left: 0;
+						right: 0;
+						bottom: 4px;
+						margin: auto;
+						z-index: 0;
+						background-color: white;
+						@include transition(width .15s ease);
+						@include border-radius(3px);
+					}
+
+					&:hover,
+					&:focus{
+						background-color: transparent;
+
+						&:after{
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin scroll_bar {
+	&::-webkit-scrollbar {
+	      width: 4px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+	      background-color: rgba(0, 0, 0, 0.2);
+	} 
+
+	&::-webkit-scrollbar-button {
+	      background-color: $dark_blue;
+	      @include border-radius(5px);
+	}
+
+	&::-webkit-scrollbar-corner {
+	      background-color: black;
+	}
+}
